@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>建構方式 4 - 拆分模組</title>
+	
+	<link rel="stylesheet" href="../../css/common.css">
+</head>
+
+<body>
+
+	<h1>建構方式 4 - 拆分模組</h1>
+	
+	<p><a href="https://cn.vuejs.org/guide/quick-start.html#splitting-up-the-modules" target="_blank">參考文件</a></p>
+	
+	<div id="app">{{ message }}</div>
+	
+	
+	
+	<script type="importmap">
+		{
+			"imports": {
+				"vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+			}
+		}
+	</script>
+	
+	<script type="module">
+		
+		import { createApp } from 'vue';
+		import MyComponent from './my-component.js';
+		
+		createApp(MyComponent).mount("#app");
+		
+	</script>
+	
+</body>
+
+</html>
